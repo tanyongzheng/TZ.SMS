@@ -16,7 +16,7 @@ namespace TZ.SMS
     /// 阿里云短信服务
     /// 文档参考：https://api.aliyun.com/?spm=a2c4g.11186623.2.15.48a41b4avRN23c#/?product=Dysmsapi
     /// </summary>
-    public class AliyunSmsService: ISmsService
+    public partial class AliyunSmsService: ISmsService
     {
         private AliyunSmsOptions aliyunSmsOptionsValue;
         public AliyunSmsService(IOptions<AliyunSmsOptions> options)
