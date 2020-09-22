@@ -7,7 +7,7 @@
     <Description>发送短信平台（暂时只做了阿里云短信）</Description>
     <PackageProjectUrl>https://github.com/tanyongzheng/TZ.SMS</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

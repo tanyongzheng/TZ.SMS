@@ -41,6 +41,26 @@ namespace Demo
             Console.ReadKey();
         }
 
+        private static async Task SendMsgAsync()
+        {
+            SetConfiguration();
+            ServiceCollections = new ServiceCollection();
+            ConfigureServices(ServiceCollections);
+            var smsService = ServiceProvider.GetService<ISmsService>();
+            var phone = "138xxxx,130xxxx";
+            var signName = "签名名字";
+            var templateCode = "SMS_xxxxxx";
+            var outId = "业务id";
+            var templateParamDic = new Dictionary<string, string>();
+            templateParamDic.Add("UserId", "123456");
+            templateParamDic.Add("vCode", "ABC123");
+            var sendResult =await smsService.SendSmsTemplateAsync(phone, signName, templateCode, outId, templateParamDic);
+            if (!string.IsNullOrEmpty(sendResult.msg))
+                Console.WriteLine(sendResult.msg);
+            Console.ReadKey();
+
+        }
+
         /// <summary>
         /// 获取随机数
         /// </summary>

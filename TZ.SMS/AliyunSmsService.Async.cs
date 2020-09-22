@@ -29,6 +29,8 @@ namespace TZ.SMS
                 SendSmsTemplate(phoneNumber, signName, templateCode, outId, templateParamDic);
             //阿里云SDK暂时没异步方法，等更新有异步方法后再重写
             //issue ：https://github.com/aliyun/aliyun-openapi-net-sdk/issues/163
+            //如果是同步方法，且类库是netstandard 2.1及以上或.net core 2.1及以上可以返回ValueTask<TResult>
+            //https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.tasks.valuetask-1?view=netstandard-2.1
             return Task.FromResult(result); ;
         }
     }
